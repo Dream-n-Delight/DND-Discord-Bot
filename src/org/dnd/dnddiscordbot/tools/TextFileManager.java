@@ -25,4 +25,8 @@ public class TextFileManager {
             writer.write(line+"\n");
         }
     }
+
+    public boolean fileExists(File file){
+        return file.exists();
+    }
 }

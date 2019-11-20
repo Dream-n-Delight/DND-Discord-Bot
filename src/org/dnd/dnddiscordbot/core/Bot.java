@@ -7,13 +7,14 @@ import org.dnd.dnddiscordbot.hooks.ActionHook;
 import org.dnd.dnddiscordbot.hooks.CommandHook;
 
 import javax.security.auth.login.LoginException;
+import java.io.IOException;
 
 public class Bot {
 
     private static JDA jda;
     private static Config configuration;
 
-    public static void main(String[] args) throws LoginException {
+    public static void main(String[] args) throws LoginException, IOException {
 
         initializeObjects();
 
