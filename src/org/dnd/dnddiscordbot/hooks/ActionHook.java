@@ -1,4 +1,6 @@
 package org.dnd.dnddiscordbot.hooks;
 
-public class ActionHook {
+import net.dv8tion.jda.api.hooks.ListenerAdapter;
+
+public class ActionHook extends ListenerAdapter {
 }
