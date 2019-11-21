@@ -1,26 +1,23 @@
-package org.dnd.dnddiscordbot.configuration;
-
-import org.dnd.dnddiscordbot.tools.TextFileManager;
+package org.dnd.dnddiscordbot.tools;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
 import java.util.List;
 
-public class Config {
+public class ConfigManager {
 
     private File configurationFile = new File("config.txt");
     private static TextFileManager tfm = new TextFileManager();
 
-    public Config() throws IOException {
+    public ConfigManager() throws IOException {
         validateConfigurationFile();
     }
 
-    public Config(File configurationFile) throws IOException {
+    public ConfigManager(File configurationFile) throws IOException {
         this.configurationFile = configurationFile;
         validateConfigurationFile();
     }

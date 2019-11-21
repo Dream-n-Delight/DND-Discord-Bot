@@ -7,6 +7,7 @@ import net.dv8tion.jda.api.requests.restaction.MessageAction;
 public class Logger {
 
     private TextChannel textChannel = null;
+    private MessageAction messageAction = null;
 
     //Default System.out Logger
     public Logger(){
@@ -17,30 +18,38 @@ public class Logger {
         this.textChannel = textChannel;
     }
 
-    public MessageAction log(String s){
+    public Logger log(String s){
         if (this.textChannel == null){
             System.out.println(s);
             return null;
         }else{
-            return this.textChannel.sendMessage(s);
+            this.messageAction = this.textChannel.sendMessage(s);
         }
+        return this;
     }
 
-    public MessageAction log(Exception ex){
+    public Logger log(Exception ex){
         if (this.textChannel == null){
             ex.printStackTrace(System.err);
-            return null;
         }else{
-            return this.textChannel.sendMessage("[ERROR] "+ex.getMessage());
+            this.messageAction = this.textChannel.sendMessage("[ERROR] "+ex.getMessage());
         }
+        return this;
     }
 
-    public MessageAction log(Message message){
+    public Logger log(Message message){
         if (this.textChannel == null){
             System.out.println(message.getContentRaw());
-            return null;
         }else{
-            return this.textChannel.sendMessage(message);
+            this.messageAction = this.textChannel.sendMessage(message);
         }
+        return this;
+    }
+
+    public Logger queue(){
+        if (this.textChannel != null && this.messageAction != null){
+            this.messageAction.queue();
+        }
+        return this;
     }
 }
