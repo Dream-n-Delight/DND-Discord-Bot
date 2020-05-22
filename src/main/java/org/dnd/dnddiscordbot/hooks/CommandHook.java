@@ -4,8 +4,6 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.dnd.dnddiscordbot.command.Command;
 import org.dnd.dnddiscordbot.core.Bot;
-import org.dnd.dnddiscordbot.modules.moderation.Ban;
-import org.dnd.dnddiscordbot.modules.moderation.Kick;
 
 import javax.annotation.Nonnull;
 import java.io.IOException;
@@ -37,7 +35,7 @@ public class CommandHook extends ListenerAdapter {
 
             for (Command command : Command.commands){
                 if (commandLabel.equalsIgnoreCase(command.getLabel())){
-                    command.getAction().call(args);
+                    //command.getAction().call(args); ????
                     break;
                 }
             }
@@ -49,7 +47,8 @@ public class CommandHook extends ListenerAdapter {
     }
 
     private void initializeCommandActions(MessageReceivedEvent event){
-        ban.setAction(new Ban(event));
-        kick.setAction(new Kick(event));
+
+        //commands?
+
     }
 }

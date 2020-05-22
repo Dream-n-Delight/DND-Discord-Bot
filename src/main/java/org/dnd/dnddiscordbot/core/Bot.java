@@ -5,7 +5,6 @@ import net.dv8tion.jda.api.JDABuilder;
 import org.dnd.dnddiscordbot.command.Command;
 import org.dnd.dnddiscordbot.tools.ConfigManager;
 import org.dnd.dnddiscordbot.exceptions.BotTokenException;
-import org.dnd.dnddiscordbot.hooks.ActionHook;
 import org.dnd.dnddiscordbot.hooks.CommandHook;
 
 import javax.security.auth.login.LoginException;
@@ -29,8 +28,7 @@ public class Bot {
         try {
             jda = new JDABuilder(configuration.getBotToken())
                     .addEventListeners(
-                            new CommandHook(),
-                            new ActionHook()
+                            new CommandHook()
                     )
                     .build();
         } catch (LoginException e) {

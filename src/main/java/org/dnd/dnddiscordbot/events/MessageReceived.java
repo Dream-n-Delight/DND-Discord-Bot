@@ -3,13 +3,8 @@ package org.dnd.dnddiscordbot.events;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import org.dnd.dnddiscordbot.command.Command;
 import org.dnd.dnddiscordbot.core.Bot;
-import org.dnd.dnddiscordbot.modules.moderation.Ban;
-import org.dnd.dnddiscordbot.modules.moderation.Kick;
 
 import java.io.IOException;
-
-import static org.dnd.dnddiscordbot.hooks.CommandHook.ban;
-import static org.dnd.dnddiscordbot.hooks.CommandHook.kick;
 
 public class MessageReceived{
 
@@ -27,8 +22,9 @@ public class MessageReceived{
     }
 
     private void initializeCommandActions(){
-        ban.setAction(new Ban(this.event));
-        kick.setAction(new Kick(this.event));
+
+        //commands?
+
     }
 
     private int recursionCount = 0;
