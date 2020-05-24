@@ -1,7 +1,6 @@
 package org.dnd.dnddiscordbot.events;
 
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-import org.dnd.dnddiscordbot.command.Command;
 import org.dnd.dnddiscordbot.core.Bot;
 
 import java.io.IOException;

@@ -2,7 +2,6 @@ package org.dnd.dnddiscordbot.core;
 
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
-import org.dnd.dnddiscordbot.command.Command;
 import org.dnd.dnddiscordbot.tools.ConfigManager;
 import org.dnd.dnddiscordbot.exceptions.BotTokenException;
 import org.dnd.dnddiscordbot.hooks.CommandHook;

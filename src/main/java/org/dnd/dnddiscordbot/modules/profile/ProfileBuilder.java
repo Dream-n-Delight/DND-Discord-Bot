@@ -1,6 +1,7 @@
 package org.dnd.dnddiscordbot.modules.profile;
 
 import com.jcraft.jsch.*;
+import net.dv8tion.jda.api.entities.User;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -9,8 +10,57 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProfileBuilder {
+
+    User user;
+    String profilePicture;
+    String[] links;
+
+    public ProfileBuilder(){
+
+        this.user = null;
+        this.profilePicture = "http://dehys.com/media/profile_pictures/";
+        this.links = new String[3];
+
+    }
+
+    public ProfileBuilder setUser(User user) {
+        this.user = user;
+        return this;
+    }
+
+    public ProfileBuilder setProfilePicture(String profilePicture) {
+        this.profilePicture = profilePicture;
+        return this;
+    }
+
+    public ProfileBuilder setLinks(String[] links) {
+        for (int l = 0; l < links.length; l++){
+            if (l == 3) break;
+            if (links[l] == null || links[l] == ""){
+                this.links[l] = links[l];
+            }
+        }
+        return this;
+    }
+
+    public ProfileBuilder addLink(String link){
+
+        //add this shit
+
+        return this;
+    }
+
+    public Profile build(){
+        return new Profile(this,
+                this.user,
+                this.profilePicture,
+                this.links);
+    }
+
 
     private static String rndName;
 

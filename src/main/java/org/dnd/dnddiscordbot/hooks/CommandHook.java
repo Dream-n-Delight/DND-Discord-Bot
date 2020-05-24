@@ -2,7 +2,6 @@ package org.dnd.dnddiscordbot.hooks;
 
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import org.dnd.dnddiscordbot.command.Command;
 import org.dnd.dnddiscordbot.core.Bot;
 
 import javax.annotation.Nonnull;
